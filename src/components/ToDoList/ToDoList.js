@@ -1,5 +1,6 @@
 import React from 'react'
 import cs from 'classnames'
+import ToDoListItem from './ToDoListItem'
 export default class Todolist extends React.Component {
     constructor() {
         super()
@@ -64,17 +65,7 @@ export default class Todolist extends React.Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {this.state.items.map((item, index) => {
-                            return (
-                                <tr key={item.id}>
-                                    <td>{item.action}</td>
-                                    <td>
-                                        <input type="checkbox" checked={item.done} onChange={this.doneListChange.bind(this, index)} />
-                                    </td>
-                                    <td>{item.done.toString()}</td>
-                                </tr>
-                            )
-                        })}
+                        <ToDoListItem willDoItem={this.state.items} />
                     </tbody>
                 </table>
             </div>
