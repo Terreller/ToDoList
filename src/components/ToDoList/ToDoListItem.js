@@ -23,8 +23,6 @@ export default class ToDoListItem extends React.Component {
                     <td>{item.done.toString()}</td>
                 </tr>
             )
-        })
-
-        )
+        }))
     }
 }
